@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap Compression Game</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to the Gap Compression Game!</h1>
+    <div id="game-start"></div>
+    <form id="game-form" style="display: none;">
+        <p>Select an option:</p>
+        <select name="choice">
+            <!-- options go here -->
+            <option value="1">Establish Our Value + CLOQC</option>
+            <option value="2">Refuse to Make Offer + Ask what prevents flexibility</option>
+            <option value="3">Make a Stair Step Offer</option>
+            <option value="4">Make a SWAG Offer</option>
+            <option value="5">Confirm our # AND Ask to lower their #</option>
+            <option value="6">Increase a little bit our number AND Ask to counter close to our #</option>
+            <option value="7">Confirm with counterpart that they want to see a # (Only after they ask you to give a number)</option>
+            <option value="8">Ask to lower</option>
+            <option value="9">Leave the Store</option>
+            <option value="10">FOMO Statement (Are you telling me if you don’t get x, You'll keep it? You dont want to sell this today?)</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        $(document).ready(function() {
+            function startGame() {
+                $.post("/start_game", function(data) {
+                    $("#game-start").html(data.response.replace(/\n/g, '<br>'));
+                    $("#game-form").show();
+                });
+            }
+
+            startGame();
+
+            $("#game-form").submit(function(event) {
+                event.preventDefault();
+                var choice = $('select[name="choice"]').val();
+                var selectedOptionText = $('select[name="choice"] option:selected').text();
+                $.post("/play", { choice: choice }, function(data) {
+                    var responseText = "<br><br>";
+                    responseText += "You Chose " + selectedOptionText + "<br>";
+                    responseText += "And the seller responds with: " + data.response;
+                    $("#response").html($("#response").html() + responseText);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -49,7 +49,7 @@ def make_stair_step_offer():
     if roll == 1:
         return "Offer Accepted (You lose)"
     elif roll == 2:
-        return "We won’t accept a low offer"
+        return "No We won’t accept a low offer"
     elif roll == 3:
         return "No and ask us to go up"
     elif roll == 4:
@@ -64,7 +64,7 @@ def make_swag_offer():
     if roll == 1:
         return "Offer Accepted (You lose)"
     elif roll == 2:
-        return "We won’t accept a low offer"
+        return "No We won’t accept a low offer"
     elif roll == 3:
         return "No and ask us to go up"
     elif roll == 4:

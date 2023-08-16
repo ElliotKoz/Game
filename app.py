@@ -53,7 +53,7 @@ def make_stair_step_offer():
     elif roll == 3:
         return "No and ask us to go up"
     elif roll == 4:
-        return "We may accept an offer close to that #"
+        return "Give me a real #"
     elif roll == 5:
         return "Counter offer (Above SS#)"
     else:

@@ -12,7 +12,7 @@ def roll_dice():
 def runway_response():
     roll = roll_dice()
     if roll ==1:
-        return "Non Answer"
+        return "Ok Thanks (Non Answer)"
     elif roll ==2:
         return "No"
     elif roll == 3:

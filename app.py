@@ -116,7 +116,7 @@ def fomo_statement():
     if roll in [1, 2, 3, ]:
         return "That’s Right"
     elif roll == 4:
-        return "Non answer, with justification on price."
+        return "Okay Thanks (Non answer), with justification on price."
     elif roll == 5:
         return "The seller lowers the price"
     else:

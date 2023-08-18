@@ -122,6 +122,17 @@ def fomo_statement():
     else:
         return "No"
 
+def discover():
+    roll = roll_dice()
+    if roll ==1:
+        return "Seller doesn't care about value difference and insists on offer"
+    elif roll ==2:
+        return "Seller doesn't care about value difference and insists on offer"
+    elif roll == 3:
+        return "Seller doesn't care about value difference and insists on offer"
+    else:
+        return "Seller Can't go lower after value beast discussion"
+
 
 def start_game():
     game_start_state = "Welcome to the Gap Compression Game! You will interact with a seller (the computer) to reach a successful negotiation. The game starts with a randomly selected starting option. Good luck!"
@@ -173,6 +184,8 @@ def play():
         response = "You left the store. The game is over."
     elif choice == 10:
         response = fomo_statement()
+    elif choice == 11:
+        response = discover()
     else:
         response = "Invalid choice. Please choose a number between 1 and 10."
 

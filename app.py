@@ -55,7 +55,7 @@ def make_stair_step_offer():
     elif roll == 4:
         return "Give me a real #"
     elif roll == 5:
-        return "Counter offer (Above SS#)"
+        return "Counter offer"
     else:
         return "The bottom line is x"
 
@@ -70,7 +70,7 @@ def make_swag_offer():
     elif roll == 4:
         return "We may accept an offer close to that #"
     elif roll == 5:
-        return "Counter offer (Above SS#)"
+        return "Counter offer"
     else:
         return "The bottom line is x"
 

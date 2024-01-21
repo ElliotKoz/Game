@@ -47,7 +47,7 @@ def refuse_to_provide_offer():
 def make_stair_step_offer():
     roll = roll_dice()
     if roll == 1:
-        return "Offer Accepted (You lose)"
+        return "We have refused offers higher than that. Go up."
     elif roll == 2:
         return "No We won’t accept a low offer"
     elif roll == 3:
@@ -62,7 +62,7 @@ def make_stair_step_offer():
 def make_swag_offer():
     roll = roll_dice()
     if roll == 1:
-        return "Offer Accepted (You lose)"
+        return "I think the seller will accept that. If you go up 10%."
     elif roll == 2:
         return "No We won’t accept a low offer"
     elif roll == 3:
@@ -132,6 +132,13 @@ def discover():
         return "Seller doesn't care about value difference and insists on offer"
     else:
         return "Seller Can't go lower after value beast discussion"
+        
+def tell():
+    roll = roll_dice()
+    if roll in [1, 2, 3]:
+        return "I Disagree, I think you should make us an offer"
+    else:
+        return "I'm offended and am no longer interested in selling you anything. Please don't talk to me again."
 
 
 def start_game():
@@ -186,6 +193,8 @@ def play():
         response = fomo_statement()
     elif choice == 11:
         response = discover()
+    elif choice == 12:
+        response = tell()
     else:
         response = "Invalid choice. Please choose a number between 1 and 10."
 
